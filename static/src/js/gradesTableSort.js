@@ -1,13 +1,14 @@
-const newsArticlesTable = document.getElementById('newsArticlesTable');
-if (newsArticlesTable) {
-	const th = newsArticlesTable.querySelectorAll('th');
-	let tbody = newsArticlesTable.querySelector('tbody');
+const dataTableGrades = document.getElementById('dataTableGrades');
+if (dataTableGrades) {
+	const th = dataTableGrades.querySelectorAll('th');
+	let tbody = dataTableGrades.querySelector('tbody');
 	let rows = [...tbody.rows];
 
 	th.forEach((element) => {
 		element.addEventListener('click', () => {
+			console.log(element.cellIndex);
 			let columnIndex = element.cellIndex;
-			if (columnIndex !== 0 && columnIndex !== 4) {
+			if (columnIndex == 1) {
 				let sortDirection = element.getAttribute('data-sort-direction') === 'asc' ? 'desc' : 'asc';
 				element.setAttribute('data-sort-direction', sortDirection);
 				rows.sort((a, b) => {

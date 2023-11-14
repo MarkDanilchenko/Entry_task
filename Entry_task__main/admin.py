@@ -1,3 +1,15 @@
 from django.contrib import admin
+from . import models
 
-# Register your models here.
+
+class GradeAdmin(admin.ModelAdmin):
+    fieldsets = (
+        ("Grade", {"fields": ("title",)}),
+    )
+
+    list_display = ("title",)
+    search_fields = ("title",)
+    list_filter = ("title",)
+
+
+admin.site.register(models.Grade, GradeAdmin)

@@ -1,4 +1,5 @@
 import './color-modes';
 import './color-modes_switcher';
-import './newsArticlesTableSort';
+import './gradesTableSort';
+import './employeesTableSort'
 import '../css/style.css';
