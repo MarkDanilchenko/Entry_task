@@ -8,7 +8,7 @@ if (dataTableEmployees) {
 		element.addEventListener('click', () => {
 			console.log(element.cellIndex);
 			let columnIndex = element.cellIndex;
-			if (columnIndex == 1) {
+			if (columnIndex > 0 && columnIndex < 6) {
 				let sortDirection = element.getAttribute('data-sort-direction') === 'asc' ? 'desc' : 'asc';
 				element.setAttribute('data-sort-direction', sortDirection);
 				rows.sort((a, b) => {

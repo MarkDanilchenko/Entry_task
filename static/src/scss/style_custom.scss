@@ -62,5 +62,13 @@ footer {
 	p {
 		text-shadow: 0 0px 15px $custom_darkgrey;
 	}
-	min-height: 70vh;
+	min-height: 50vh;
+}
+
+th, td {
+	vertical-align: middle !important;
+}
+
+form {
+	min-width: 40vw;
 }

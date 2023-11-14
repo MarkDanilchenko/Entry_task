@@ -13,7 +13,7 @@ package-lock.json
 # media
 *.pdf
 *.sql
-!.sql
+!Entry_task.sql
 db_data/
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/

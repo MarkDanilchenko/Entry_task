@@ -598,10 +598,18 @@ footer {
 .no-content {
   font-family: "JetBrains Mono", monospace;
   font-size: 1.5rem;
-  min-height: 70vh;
+  min-height: 50vh;
 }
 .no-content p {
   text-shadow: 0 0px 15px rgb(92, 92, 92);
+}
+
+th, td {
+  vertical-align: middle !important;
+}
+
+form {
+  min-width: 40vw;
 }
 
 /*# sourceMappingURL=style.css.map */

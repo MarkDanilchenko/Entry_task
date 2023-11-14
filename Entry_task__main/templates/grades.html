@@ -21,7 +21,7 @@
 					<i>Grades</i>
 				</caption>
 				<thead style="cursor: pointer">
-					<tr class="d-flex text-center">
+					<tr class="d-flex text-center text-small">
 						<th class="col-1">#</th>
 						<th class="col-7">Grade &#9650; &#9660;</th>
 						<th class="col-2">Edit</th>
@@ -33,7 +33,7 @@
 					<tr class="d-flex text-center">
 						<td scope="row" class="col-1">{{ forloop.counter }}</td>
 						<td class="col-7">
-							<b><i>{{i.title}}</i></b>
+							<i>{{i.title}}</i>
 						</td>
 						<td class="col-2"><a href="{% url 'grades_update' i.id %}" class="nav-link">&#9999;</a></td>
 						<td class="col-2"><a href="{% url 'grades_delete' i.id %}" class="nav-link">&#10060;</a></td>
@@ -42,7 +42,7 @@
 				</tbody>
 				<tfoot style="cursor: pointer">
 					<tr>
-						<td colspan="4"><a href="{% url 'grades_add' %}" class="nav-link">&#9989; Add new grade</a></td>
+						<td colspan="4"><a href="{% url 'grades_add' %}" class="nav-link">&#9989; Add grade</a></td>
 					</tr>
 				</tfoot>
 			</table>
@@ -50,12 +50,12 @@
 		{% elif notResultSearch %}
 		<div class="d-flex flex-column justify-content-center align-items-center no-content">
 			<p class="text-center">&#128532;<br /><b>{{ notResultSearch }}</b></p>
-			<a href="" class="nav-link ms-3">Back</a>
+			<a href="{% url 'grades_info' %}" class="nav-link ms-3">Back</a>
 		</div>
 		{% else %}
 		<div class="d-flex flex-column justify-content-center align-items-center no-content">
 			<p class="text-center">&#128532;<br /><b>Sorry, but No content yet right here...</b></p>
-			<a href="" class="nav-link">&#9989; Add new grade</a>
+			<a href="{% url 'grades_add' %}" class="nav-link">&#9989; Add grade</a>
 		</div>
 		{% endif %}
 	</div>

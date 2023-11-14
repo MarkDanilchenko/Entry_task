@@ -3,10 +3,86 @@ from . import models, forms
 from fuzzywuzzy import fuzz, process
 
 
+# employees functions
+# employees functions
+# employees functions
 def employees_info(request):
-    pass
+    result = models.Employee.objects.all()
+    return render(request, "employees.html", {"result": result})
 
 
+def employees_search(request):
+    try:
+        searchEmployee = request.POST.get("searchEmployee")
+        if len(searchEmployee) == 0:
+            raise Exception
+        else:
+            result = models.Employee.objects.all()
+            for i in result:
+                if (
+                    (fuzz.partial_ratio(searchEmployee, str(i.first_name)) > 60)
+                    or (fuzz.partial_ratio(searchEmployee, str(i.last_name)) > 60)
+                    or (fuzz.partial_ratio(searchEmployee, str(i.second_name)) > 60)
+                    or (fuzz.partial_ratio(searchEmployee, str(i.grade.title)) > 60)
+                    or (
+                        fuzz.partial_ratio(searchEmployee, str(i.date_of_employment))
+                        > 60
+                    )
+                ):
+                    continue
+                else:
+                    result = result.exclude(id=i.pk)
+            else:
+                if len(result) == 0:
+                    return render(
+                        request, "employees.html", {"notResultSearch": "Not found"}
+                    )
+                return render(request, "employees.html", {"result": result})
+    except:
+        result = models.Employee.objects.all()
+        return render(request, "employees.html", {"result": result})
+
+
+def employees_delete(request, id):
+    try:
+        if models.Employee.objects.filter(id=id).exists():
+            models.Employee.objects.filter(id=id).delete()
+            result = models.Employee.objects.all()
+            return render(request, "employees.html", {"result": result})
+    except:
+        result = models.Employee.objects.all()
+        return render(request, "employees.html", {"result": result})
+
+
+def employees_add(request):
+    if request.method == "POST":
+        form = forms.EmployeeForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("/employees/info")
+    else:
+        form = forms.EmployeeForm()
+    return render(request, "employees_add.html", {"form": form})
+
+
+def employees_update(request, id):
+    try:
+        result = models.Employee.objects.get(id=id)
+        form = forms.EmployeeForm(instance=result)
+        if request.method == "POST":
+            form = forms.EmployeeForm(request.POST, instance=result)
+            if form.is_valid():
+                form.save()
+                return redirect("/employees/info")
+        return render(request, "employees_update.html", {"form": form})
+    except:
+        result = models.Employee.objects.all()
+        return render(request, "employees.html", {"result": result})
+
+
+# grades functions
+# grades functions
+# grades functions
 def grades_info(request):
     result = models.Grade.objects.all()
     return render(request, "grades.html", {"result": result})

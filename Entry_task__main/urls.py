@@ -4,10 +4,10 @@ from . import views
 
 employees_urls = [
     path("info/", views.employees_info, name="employees_info"),
-    # path('search/', views.employees_search, name="employees_search"),
-    # path("add/", views.employees_add, name="employees_add"),
-    # path("update/<int:id>/", views.employees_update, name="employees_update"),
-    # path("delete/<int:id>/", views.employees_delete, name="employees_delete"),
+    path('search/', views.employees_search, name="employees_search"),
+    path("add/", views.employees_add, name="employees_add"),
+    path("update/<int:id>/", views.employees_update, name="employees_update"),
+    path("delete/<int:id>/", views.employees_delete, name="employees_delete"),
 ]
 
 grades_urls = [
