@@ -1,16 +1,38 @@
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from . import models, forms
 from fuzzywuzzy import fuzz, process
 
 
+# registration
+# registration
+# registration
+def registration(request):
+    if request.method == "POST":
+        form = forms.UserForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get("username")
+            password = form.cleaned_data.get("password1")
+            userLogIn = authenticate(username=username, password=password)
+            login(request, userLogIn)
+            return redirect("/")
+    else:
+        form = forms.UserForm()
+    return render(request, "registration/registration.html", {"form": form})
+
+
 # employees functions
 # employees functions
 # employees functions
+@login_required
 def employees_info(request):
     result = models.Employee.objects.all()
     return render(request, "employees.html", {"result": result})
 
 
+@login_required
 def employees_search(request):
     try:
         searchEmployee = request.POST.get("searchEmployee")
@@ -43,6 +65,7 @@ def employees_search(request):
         return render(request, "employees.html", {"result": result})
 
 
+@login_required
 def employees_delete(request, id):
     try:
         if models.Employee.objects.filter(id=id).exists():
@@ -54,6 +77,7 @@ def employees_delete(request, id):
         return render(request, "employees.html", {"result": result})
 
 
+@login_required
 def employees_add(request):
     if request.method == "POST":
         form = forms.EmployeeForm(request.POST)
@@ -65,6 +89,7 @@ def employees_add(request):
     return render(request, "employees_add.html", {"form": form})
 
 
+@login_required
 def employees_update(request, id):
     try:
         result = models.Employee.objects.get(id=id)
@@ -83,11 +108,13 @@ def employees_update(request, id):
 # grades functions
 # grades functions
 # grades functions
+@login_required
 def grades_info(request):
     result = models.Grade.objects.all()
     return render(request, "grades.html", {"result": result})
 
 
+@login_required
 def grades_search(request):
     try:
         searchGrade = request.POST.get("searchGrade")
@@ -113,6 +140,7 @@ def grades_search(request):
         return render(request, "grades.html", {"result": result})
 
 
+@login_required
 def grades_delete(request, id):
     try:
         if models.Grade.objects.filter(id=id).exists():
@@ -124,6 +152,7 @@ def grades_delete(request, id):
         return render(request, "grades.html", {"result": result})
 
 
+@login_required
 def grades_add(request):
     if request.method == "POST":
         form = forms.GradeForm(request.POST)
@@ -135,6 +164,7 @@ def grades_add(request):
     return render(request, "grades_add.html", {"form": form})
 
 
+@login_required
 def grades_update(request, id):
     try:
         result = models.Grade.objects.get(id=id)

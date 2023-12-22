@@ -23,6 +23,8 @@ from Entry_task__main import views
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("Entry_task__main.urls")),
+    path("accounts/", include("django.contrib.auth.urls")),
+    path("accounts/registration", views.registration, name="registration"),
 ]
 
 if settings.DEBUG:

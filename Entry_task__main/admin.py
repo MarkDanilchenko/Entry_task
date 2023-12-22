@@ -1,5 +1,24 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+
 from . import models
+
+
+class CustomUserAdmin(UserAdmin):
+    list_display = (
+        "username",
+        "email",
+        "is_staff",
+        "is_superuser",
+        "phone",
+        "date_joined",
+        "last_login",
+    )
+    list_filter = ("username",)
+    search_fields = ("username",)
+
+
+admin.site.register(models.User, CustomUserAdmin)
 
 
 class GradeAdmin(admin.ModelAdmin):

@@ -15,7 +15,7 @@ _____
 - After the installation is completed, the server will start automatically on 0.0.0.0:8900;
 - Open app using http://0.0.0.0:8900/ in your browser;
 5. The superuser has been already created;
-- You can login under current superuser using standart credentials: ```login: admin; pass: admin```;
+- You can login under current superuser using standart credentials: ```login: admin; pass: 12345admin```;
 - For password change use: ```cd '.../project_folder' && python3 manage.py changepassword admin```
 - Or You can manually create superuser for Your own purpose: ```cd '.../project_folder' && python3 manage.py createsuperuser``` ;
 6. Note that DataBase - MySQL;
