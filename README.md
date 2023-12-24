@@ -21,5 +21,7 @@ _____
 6. Note that DataBase - MySQL;
 7. To stop the server: ```Ctrl+C```;
 8. To completely remove all created docker containers, images and volumes: ```docker-compose down --volumes```.
-
 _____
+### p.s.:
+
+*Logs' file "error.log" with error messages that may cause the application to be interrupted or lead to undesirable results is available after successfull app launch.*

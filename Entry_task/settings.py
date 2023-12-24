@@ -150,7 +150,7 @@ LOGGING = {
             "class": "logging.StreamHandler",
         },
         "error_file": {
-            "level": "INFO",
+            "level": "ERROR",
             "class": "logging.FileHandler",
             "filename": "error.log",
         },
@@ -163,7 +163,7 @@ LOGGING = {
         },
         "": {
             "handlers": ["error_file"],
-            "level": "INFO",
+            "level": "ERROR",
             "propagate": True,
         },
     },
