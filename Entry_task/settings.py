@@ -25,7 +25,7 @@ dotenv.load_dotenv(os.path.join(BASE_DIR, ".env"))
 SECRET_KEY = "django-insecure-p+0(#&-kbxr=6bjj0-&d3vgie0dvwzjpw(h8@ftw3z6hetkr02"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "True")
 
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", "0.0.0.0"]
 
@@ -49,12 +49,14 @@ CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+
 ]
 
 ROOT_URLCONF = "Entry_task.urls"
@@ -133,6 +135,10 @@ STATICFILES_DIRS = [
 STATIC_URL = "static/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "./media")
 MEDIA_URL = "media/"
+
+# GUNICORN SETTINGS
+STATIC_ROOT = os.path.join(BASE_DIR, "./staticfiles")
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
