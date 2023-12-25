@@ -3,7 +3,7 @@ This is a Django test project using MySQL and Docker.
 
 
 ## Launch instructions
-_____
+
 
 1. Clone repository to your local folder;
 2. Copy dev.env to .env file: ```cp dev.env .env```;
@@ -21,7 +21,30 @@ _____
 6. Note that DataBase - MySQL;
 7. To stop the server: ```Ctrl+C```;
 8. To completely remove all created docker containers, images and volumes: ```docker-compose down --volumes```.
-_____
-### p.s.:
 
-*Logs' file "error.log" with error messages that may cause the application to be interrupted or lead to undesirable results is available after successfull app launch.*
+**p.s.:**
+
+ --> error.log <-- : contains error messages that may cause the application to be interrupted or lead to undesirable results. 
+Available in root folder after successfull app launch.
+
+### Screenshots 
+
+1. Main page (desktop/phone)
+![Main page - desktop](screenshots/ScreenShot_1.png)
+![Main page - phone](screenshots/ScreenShot_2.png)
+
+2. Select part (desktop/phone)
+![Select part desktop](screenshots/ScreenShot_3.png)
+![Select part phone](screenshots/ScreenShot_4.png)
+
+3. Data display
+![Data display](screenshots/ScreenShot_5.png)
+
+4. Data edit
+![Data edit](screenshots/ScreenShot_6.png)
+
+5. Empty data
+![Empty data](screenshots/ScreenShot_7.png)
+
+6. Add data
+![Add data](screenshots/ScreenShot_8.png)
