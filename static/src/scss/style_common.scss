@@ -1,0 +1,91 @@
+header {
+  position: sticky;
+  top: 0;
+  border-radius: 10px;
+  z-index: 100;
+}
+
+body {
+  border-radius: 15px;
+  margin: 20px;
+  box-shadow: 0 0 20px $custom_grey;
+  min-height: 95vh;
+}
+
+#container_main {
+  min-height: 95vh;
+}
+
+footer {
+  position: sticky;
+  top: 95%;
+}
+
+@media screen and (min-width: 600px) {
+  .myHomework_labelBr {
+    display: none;
+  }
+  #myHomework_label {
+    font-family: $font-family-JetBrains;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: unset;
+  }
+}
+
+.logoString_h3,
+.logoString_h5,
+#headerGreeting {
+  font-family: $font-family-JetBrains;
+}
+
+.logoString_h3 > h3 {
+  color: $custom_red !important;
+  font-size: 2.5rem;
+  text-shadow: 0 0px 15px $custom_darkgrey;
+}
+
+.no-content {
+  font-family: $font-family-JetBrains;
+  font-size: 1.5rem;
+  min-height: 40vh;
+  p {
+    text-shadow: 0 0px 15px $custom_darkgrey;
+  }
+}
+
+th,
+td {
+  vertical-align: middle !important;
+}
+
+.addUpdate_GradesEmp__Form {
+  min-width: 40vw;
+}
+
+.text-small {
+  font-size: 85%;
+}
+
+.dropdown-toggle:not(:focus) {
+  outline: 0;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.nav-link {
+  color: $custom_grey;
+}
+
+.nav-link:hover {
+  color: $custom_red;
+}

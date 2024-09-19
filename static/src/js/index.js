@@ -1,5 +1,5 @@
-import './color-modes';
-import './color-modes_switcher';
-import './gradesTableSort';
-import './employeesTableSort'
-import '../css/style.css';
+import '../scss/style.scss';
+import './color-modes.js';
+import './color-modes_switcher.js';
+import './gradesTableSort.js';
+import './employeesTableSort.js';

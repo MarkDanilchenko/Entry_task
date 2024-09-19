@@ -22,15 +22,12 @@ This is a Django test project using MySQL and Docker.
 7. To stop the server: ```Ctrl+C```;
 8. To completely remove all created docker containers, images and volumes: ```docker-compose down --volumes```.
 
-**p.s.:**
-
- --> error.log <-- : contains error messages that may cause the application to be interrupted or lead to undesirable results. 
-Available in root folder after successfull app launch.
-
 ### Screenshots 
 
 1. Main page (desktop/phone)
-![Main page - desktop](screenshots/ScreenShot_1.png)
+<div align="center">
+  <img src="./screenshots/ScreenShot_1.png" width="75%" heigth="75%" alt="Main page - desktop">
+</div>
 ![Main page - phone](screenshots/ScreenShot_2.png)
 
 2. Select part (desktop/phone)

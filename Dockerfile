@@ -1,6 +1,6 @@
-ARG PYTHON_VERSION=3.10.11
+ARG PYTHON_VERSION=3.9.6
 
-FROM node:16 as frontend
+FROM node:20 as frontend
 
 RUN mkdir /static
 

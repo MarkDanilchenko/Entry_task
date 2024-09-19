@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% block content %}
+{% autoescape off %}
+
+<div class="d-flex flex-column justify-content-center align-items-center mt-5">
+    <div class="logoString_h3 text-center mt-3">
+        <h3>Edit Employee!</h3>
+        <p class="mt-3 text-muted">Edit employee</p>
+    </div>
+    {% load crispy_forms_tags %}
+
+    <form action="" method="post" enctype="multipart/form-data"
+        class="d-flex flex-column align-items-center mb-5 mt-3 border border-3 rounded-3 px-3 py-5 shadow-lg addUpdate_GradesEmp__Form">
+        {% csrf_token %}
+
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4 text-center"><b>Edit employee</b></legend>
+
+            {{ form|crispy }}
+
+        </fieldset>
+        <div class="d-flex justify-content-center align-items-center">
+            <a href="{% url 'employees_info' %}" class="nav-link" title="Back">Back</a>
+            <button type="submit" class="btn btn-outline-secondary ms-3">Edit</button>
+        </div>
+    </form>
+</div>
+
+{% endautoescape %}
+{% endblock %}
