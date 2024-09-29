@@ -17,7 +17,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "Employees_grades__main.apps.EmployeesGradesMainConfig",
+    "EmployeesAndGrades__main.apps.EmployeesGradesMainConfig",
     "crispy_forms",
     "crispy_bootstrap5",
 ]
@@ -35,7 +35,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "Employees_grades.urls"
+ROOT_URLCONF = "EmployeesAndGrades.urls"
 
 TEMPLATES = [
     {
@@ -54,7 +54,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "Employees_grades.wsgi.application"
+WSGI_APPLICATION = "EmployeesAndGrades.wsgi.application"
 
 DATABASES = {
     "default": {
@@ -82,7 +82,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = "Employees_grades__main.User"
+AUTH_USER_MODEL = "EmployeesAndGrades__main.User"
 
 LANGUAGE_CODE = "en-us"
 
