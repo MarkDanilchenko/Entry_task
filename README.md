@@ -110,7 +110,7 @@ This is a simple MPA project, based on Django4. The app implements relationship 
 2. Main page (authenticated users)
 
 <div align="center">
-  <img src="./screenshots/ScreenShot_4.png" width="75%" heigth="75%" alt="Main page - desktop">
+  <img src="./screenshots/ScreenShot_4.png" width="75%" heigth="75%" alt="Main page - if authenticated">
 </div>
 
 3. SignUp & signIn forms:
