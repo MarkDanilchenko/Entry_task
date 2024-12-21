@@ -1,6 +1,6 @@
 ## App Description &#128209;
 
-This is a simple MPA project, based on Django4. The app implements relationship between two models in PostgresQL (employees & grades) with minimum UI.
+This is a simple MPA project, based on Django4 and postgreSQL. The app implements relationship between two models (employees & grades) with minimum UI.
 
 ## Launch instructions &#128190;
 
